@@ -4,28 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 6 - 객체</title>
+  <title>자스 필수패턴 7 - 함수</title>
 </head>
 
 <body>
   <script>
-    //const student1 = ['Andy', 20, 'Seoul', 'game'];
-    const student1 = {
-      name: 'Andy',
-      age: 20,
-      address: 'Seoul',
-      hobby: 'game'
+    /*
+    함수 : 특정 코드들을 그룹으로 패키징해서 재활용하기 위함
+    매개변수 (parameter): 함수외부에서 함수 내부로 값을 전달하기 위한 통로명
+    인수 (argument): 매개변수를 통해 전달되는 실제적인 값 
+    반환값 (return): 함수에서 만들어진 값을 함수 외부로 전달, 함수실행도중 강제종료
+    function 함수명(전달값){
+      전달값을 받아서 실핼될 구문 (함수에 전달값이 없을수도 있음)
+      return 함수밖으로 내보낼 값
+    }
+    */
+
+    function plus(num1, num2) {
+      //특정 코드블록 안에 선언된 변수는 지역변수 : 해당 코드블록 안쪽에서만 읽힘
+      //해당 코드블록 밖에서는 접근 불가
+      const result = num1 + num2;
+      return result;
+      //console.log(result);
     }
 
-    student1.age = 21; //초기 객체 생성이후 property명을 활용해서 값을 변경가능
-    student1.gender = 'male';
+    const returned = plus(2, 3);
+    console.log(returned);
 
-    console.log(student1);
-    console.log(student1.name);
-    console.log(student1.age);
-    console.log(student1.address);
-    console.log(student1['hobby']); //배열처럼 객체의 값을 뽑아낼수 있음
 
+    function work(condition) {
+      console.log('test1');
+      console.log('test2');
+      if (condition) return;
+      console.log('useless1')
+      console.log('useless2');
+    }
+
+    work(false);
 
   </script>
 </body>
