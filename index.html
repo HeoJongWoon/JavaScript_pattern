@@ -4,49 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 13- 돔 요소에 클래스명 제어</title>
-  <style>
-    article {
-      width: 300px;
-      height: 300px;
-      background-color: gray;
-    }
-
-    article.on {
-      background-color: aqua;
-    }
-  </style>
+  <title>자스 필수패턴 14- 문자열에 변수 삽입하기</title>
 </head>
 
 <body>
-  <article></article>
-
-  <button>클래스명 추가</button>
-  <button>클래스명 제거</button>
-  <button>클래스명 토글</button>
-
   <script>
-    const box = document.querySelector('article');
-    const btns = document.querySelectorAll('button');
+    const name = '김영희';
+    const age = 30;
 
-    btns[0].addEventListener('click', () => {
-      box.classList.add('on');
-    })
-
-    btns[1].addEventListener('click', () => {
-      box.classList.remove('on');
-    })
-
-    btns[2].addEventListener('click', () => {
-      box.classList.toggle('on')
-    })
-    /*
-    btns[2].addEventListener('click', () => {
-      let isOn = box.classList.contains('on');
-      if (isOn) box.classList.remove('on');
-      else box.classList.add('on');
-    })
-    */
+    //console.log('안녕하세요 저의 이름은 ' + name + '이고 나이는 ' + age + '살입니다.')
+    console.log(`안녕하세요. 제 이름은 ${name}이고 나이는 ${age}살입니다.`)
   </script>
 </body>
 
