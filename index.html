@@ -4,35 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 12- DOM 이벤트 연결</title>
+  <title>자스 필수패턴 13- 돔 요소에 클래스명 제어</title>
+  <style>
+    article {
+      width: 300px;
+      height: 300px;
+      background-color: gray;
+    }
+
+    article.on {
+      background-color: aqua;
+    }
+  </style>
 </head>
 
 <body>
-  <ul>
-    <li>button1</li>
-    <li>button2</li>
-    <li>button3</li>
-  </ul>
+  <article></article>
+
+  <button>클래스명 추가</button>
+  <button>클래스명 제거</button>
+  <button>클래스명 토글</button>
 
   <script>
-    const btns = document.querySelectorAll('li');
+    const box = document.querySelector('article');
+    const btns = document.querySelectorAll('button');
 
-    for (const el of btns) {
-      el.addEventListener('click', (e) => {
-        console.log(el);
-      })
-    }
+    btns[0].addEventListener('click', () => {
+      box.classList.add('on');
+    })
 
+    btns[1].addEventListener('click', () => {
+      box.classList.remove('on');
+    })
+
+    btns[2].addEventListener('click', () => {
+      box.classList.toggle('on')
+    })
     /*
-    btns.forEach((btn, idx) => {
-      //console.log(btn);
-      //console.log(idx);
-      btns[idx].addEventListener('click', (e) => {
-        console.log(idx);
-        console.log(btns[idx])
-        //console.log(btn);
-        //console.log(e.currentTarget);
-      })
+    btns[2].addEventListener('click', () => {
+      let isOn = box.classList.contains('on');
+      if (isOn) box.classList.remove('on');
+      else box.classList.add('on');
     })
     */
   </script>
