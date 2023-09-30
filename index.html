@@ -4,28 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 16- 비구조화할당으로 객체, 배열값 변수로 옯겨담기</title>
+  <title>자스 필수패턴 17- 동적으로 돔 생성하기</title>
 </head>
 
 <body>
+  <section id="wrap">
+    <p>Lorem, ipsum dolor.</p>
+  </section>
+
   <script>
-    // 비구조화할당, 구조분해할당, destructuring assignment
-    const colors = ['red', 'green', 'blue'];
-    // const color1 = colors[0];
-    // const color2 = colors[1];
-    // const color3 = colors[2];
-    const [color1, color2, color3] = colors;
-    console.log(color1);
+    const wrap = document.querySelector('#wrap');
+    const url = 'https://www.nate.com';
+    const htmls = `
+      <h1>
+        <a href='${url}'>LOGO</a>
+      </h1>
+      `
+    // innerHTML는 기존 선택자 안쪽의 내용을 지우면서 새로운 태그 내용으로 덮어쓰기함
+    // wrap.innerHTML = htmls;
 
-    const student = {
-      name: 'David',
-      age: 20
-    }
-    // const name = student.name;
-    // const age = student.age;
+    // append는 기존 선택자의 자식 내용을 유지하면서 추가로 동적돔을 생성
+    // 이때 주의할점 append의 인수값으로는 문자가 아닌 엘리먼트 노드형태로 삽입되어야 하기 때문에
+    // 삽입할 요소중 최상의 wrapping요소를 document.createElement('태그명') 으로 생성해야됨
 
-    const { name, age } = student;
-    console.log(age);
+    const h1 = document.createElement('h1');
+    h1.innerHTML = `<a href=${url}>LOGO</a>`;
+
+    wrap.append(h1)
   </script>
 </body>
 
