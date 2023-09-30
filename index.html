@@ -4,40 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 20- anime.js활용</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js">
-  </script>
-  <script src="anime.js"></script>
+  <title>필수패턴 21 - 문자열 관련 내장 함수</title>
 </head>
 
-
 <body>
-  <button>버튼</button>
-  <section>
-    <article></article>
-  </section>
+  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, aliquid!</h1>
+  <p>members: Andy, David, Julia, Paul, Emma, Mechael</p>
+  <span>2023-07-13 / 08:26</span>
 
   <script>
-    // width, height, top, left, margin, padding, opacity, scroll
-    // px, percent
-    const btn = document.querySelector('button');
-    const box = document.querySelector('article');
+    //문자열 자르기
+    const h1 = document.querySelector('h1').innerText;
+    console.log(h1);
 
-    btn.addEventListener('click', () => {
-      new Anime(window, {
-        prop: 'scroll',
-        value: 2000,
-        duration: 1000,
-        callback: () => {
-          new Anime(window, {
-            prop: 'scroll',
-            value: 0,
-            duration: 500,
-          })
-        }
-      })
-    })
+    const h1_cut = h1.substr(0, 10);
+    console.log(h1_cut);
+
+    //전체 문자열에서 특정 문자의 위치값 알아보기
+    const p = document.querySelector('p').innerText;
+    console.log(p.indexOf('Sara'))
+
+    //문자열 분리해서 배열로 반환
+    const span = document.querySelector('span').innerText;
+    console.log(span.split('/')[0])
+    const date = span.split('/')[0];
+    const date_arr = date.split('-');
+    console.log(date_arr.join('.'));
+
+    //문자의 양옆 빈칸 제거해서 정리
+    const myName = '    홍 길동       ';
+    const myName2 = myName.trim();
+    console.log(myName2.length)
+
   </script>
 </body>
 
