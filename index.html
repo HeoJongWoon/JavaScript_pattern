@@ -4,33 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 10 -돔요소 선택하기</title>
+  <title>자스 필수패턴 11 -DOM 스타일링</title>
+  <style>
+    article {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+    }
+  </style>
 </head>
 
 <body>
-  <section>
-    <article>box1</article>
-    <article>box2</article>
-    <article>box3</article>
-
-    <ul>
-      <li>button1</li>
-      <li class="btn">button2</li>
-      <li>button3</li>
-    </ul>
-  </section>
+  <article></article>
 
   <script>
-    const section = document.querySelector('section');
-    const articles = section.querySelectorAll('article');
-    const btn = section.querySelector('.btn');
-    const childEl = section.children;
-    const parentEl = btn.parentElement;
-    const grandParentEl = btn.closest('section');
-    const prevEl = btn.previousElementSibling;
-    const nextEl = btn.nextElementSibling;
-    console.log(grandParentEl);
+    const box = document.querySelector('article');
+    box.style.width = '300px';
+    //box.style.backgroundColor = 'pink';
+    //box.style['background-color'] = 'hotpink';
+    const boxStyle = getComputedStyle(box)['background-color'];
+    console.log(boxStyle);
   </script>
 </body>
 
 </html>
+​
