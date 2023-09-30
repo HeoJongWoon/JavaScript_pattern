@@ -4,15 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 2- 문자열, 숫자</title>
+  <title>자스 필수패턴 3- 연산자</title>
 </head>
 
 <body>
   <script>
-    let txt = '2'; //문자열
-    let num = 2; //숫자
-    let result = txt + num; //문자와 숫자는 더해질수 없으니 num의 숫자값이 문자로 변환됨
-    console.log('result'); //변수에 따옴표를 묶으면 문자로 변경되며 변수의 값을 읽을 수 없게됨
+    //산술연산자
+    console.log(2 + 3);
+    console.log(2 - 3);
+    console.log(2 * 3);
+    console.log(4 / 2);
+    console.log(5 % 2);
+
+    let num = 1;
+    console.log(--num);
+    console.log(num);
+
+    //비교연산자
+    console.log(3 == '3'); //값만 비교하고 자료형은 비교안함
+    console.log(3 === '3'); //값과 자료형을 모두 비교
+
+    console.log(2 != '2');
+    console.log(2 !== '2');
+
+    console.log(2 < 3);
+    console.log(2 <= 2);
+
+    console.log(true && true) // 복수개의 값이 모두 true가 되어야지 true반환
+    console.log(true || false) // 둘중의 하나만이라도 true가 있으면 true반환
+
+    //복합 대입 연산자
+    let num1 = 5;
+    //num1 = num1 + 2;
+    num1 += 2;
+    console.log(num1);
+
+    let txt1 = 'hello';
+    txt1 += ' world';
+    console.log(txt1);
   </script>
 </body>
 
