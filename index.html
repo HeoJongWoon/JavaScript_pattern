@@ -4,17 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 5 - 배열</title>
+  <title>자스 필수패턴 6 - 객체</title>
 </head>
 
 <body>
   <script>
-    const colors = ['red', 'green', 'blue'];
-    console.log(colors[2]); //순서값을 배열의 값 추출
-    console.log(colors.length); //배열의 전체 갯수값 추출
-    colors.push('yellow');
-    console.log(colors);
-    console.log(colors.length);
+    //const student1 = ['Andy', 20, 'Seoul', 'game'];
+    const student1 = {
+      name: 'Andy',
+      age: 20,
+      address: 'Seoul',
+      hobby: 'game'
+    }
+
+    student1.age = 21; //초기 객체 생성이후 property명을 활용해서 값을 변경가능
+    student1.gender = 'male';
+
+    console.log(student1);
+    console.log(student1.name);
+    console.log(student1.age);
+    console.log(student1.address);
+    console.log(student1['hobby']); //배열처럼 객체의 값을 뽑아낼수 있음
+
 
   </script>
 </body>
