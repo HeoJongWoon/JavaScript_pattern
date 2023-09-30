@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 18- 문자열을 숫자로 변경</title>
+  <title>자스 필수패턴 19- 속성값 제어</title>
 </head>
 
 <body>
+  <a href="https://www.naver.com" title="네이버로 이동" target="_blank">네이버</a>
+
   <script>
-    // parseInt : 특정 숫자값을 정수로 변환 (문자도 숫자로 변화됨)
-    // parseFloat : 특정 숫자값을 실수로 변환 (문자도 숫자로 변화됨)
-    const num = '4.5s';
+    const link = document.querySelector('a');
+    const value = link.getAttribute('target');
 
-    const result = parseInt(num);
-    console.log(result);
-
-    const result2 = parseFloat(num);
-    console.log(result2);
+    link.setAttribute('href', 'https://www.nate.com')
+    link.setAttribute('title', '네이트로 이동')
+    link.setAttribute('targer', '_self')
+    link.innerText = '네이트';
   </script>
 </body>
 
