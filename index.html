@@ -4,20 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 19- 속성값 제어</title>
+  <title>자스 필수패턴 20- anime.js활용</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/dist/bezier-easing.min.js">
+  </script>
+  <script src="anime.js"></script>
 </head>
 
+
 <body>
-  <a href="https://www.naver.com" title="네이버로 이동" target="_blank">네이버</a>
+  <button>버튼</button>
+  <section>
+    <article></article>
+  </section>
 
   <script>
-    const link = document.querySelector('a');
-    const value = link.getAttribute('target');
+    // width, height, top, left, margin, padding, opacity, scroll
+    // px, percent
+    const btn = document.querySelector('button');
+    const box = document.querySelector('article');
 
-    link.setAttribute('href', 'https://www.nate.com')
-    link.setAttribute('title', '네이트로 이동')
-    link.setAttribute('targer', '_self')
-    link.innerText = '네이트';
+    btn.addEventListener('click', () => {
+      new Anime(window, {
+        prop: 'scroll',
+        value: 2000,
+        duration: 1000,
+        callback: () => {
+          new Anime(window, {
+            prop: 'scroll',
+            value: 0,
+            duration: 500,
+          })
+        }
+      })
+    })
   </script>
 </body>
 
