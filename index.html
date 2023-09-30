@@ -4,28 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자스 필수패턴 11 -DOM 스타일링</title>
-  <style>
-    article {
-      width: 200px;
-      height: 200px;
-      background-color: aqua;
-    }
-  </style>
+  <title>자스 필수패턴 12- DOM 이벤트 연결</title>
 </head>
 
 <body>
-  <article></article>
+  <ul>
+    <li>button1</li>
+    <li>button2</li>
+    <li>button3</li>
+  </ul>
 
   <script>
-    const box = document.querySelector('article');
-    box.style.width = '300px';
-    //box.style.backgroundColor = 'pink';
-    //box.style['background-color'] = 'hotpink';
-    const boxStyle = getComputedStyle(box)['background-color'];
-    console.log(boxStyle);
+    const btns = document.querySelectorAll('li');
+
+    for (const el of btns) {
+      el.addEventListener('click', (e) => {
+        console.log(el);
+      })
+    }
+
+    /*
+    btns.forEach((btn, idx) => {
+      //console.log(btn);
+      //console.log(idx);
+      btns[idx].addEventListener('click', (e) => {
+        console.log(idx);
+        console.log(btns[idx])
+        //console.log(btn);
+        //console.log(e.currentTarget);
+      })
+    })
+    */
   </script>
 </body>
 
 </html>
-​
